@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,10 +11,12 @@ namespace ConsoleApplication
     {
         static void Main(string[] args)
         {
-            Random1.Calc calc = new Random1.Calc();
-            Double result = calc.Add(1, 2);
+            //Create random class with port 3
+            RandomFromTrueRNG random = new RandomFromTrueRNG(3);
 
-            Console.WriteLine(result);
+            Byte[] randombytes = random.fill(20);
+
+            Debug.Assert(randombytes.Length == 20);
         }
     }
 }

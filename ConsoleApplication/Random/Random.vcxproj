@@ -78,6 +78,7 @@
   <ItemGroup>
     <ClInclude Include="Random.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="rng.h" />
     <ClInclude Include="Stdafx.h" />
   </ItemGroup>
   <ItemGroup>
