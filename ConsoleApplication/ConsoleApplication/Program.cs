@@ -21,13 +21,26 @@ namespace ConsoleApplication
 
         static void Main(string[] args)
         {
-            CreateRng(3);
+            //Check on device manager after installed with driver
+            Int32 port = Convert.ToInt32(args[0]);
+            Int32 length = 20;
 
-            Byte[] randombytes = new Byte[20];
+            CreateRng(port);
 
-            int nbytes = Fill(randombytes, 20);
+            Byte[] randombytes = new Byte[length];
+
+            int nbytes = Fill(randombytes, length);
 
             DeleteRng();
+
+            Console.WriteLine("Dump to console");
+            for(Int32 i = 0; i < length; i++)
+            {
+                Console.WriteLine(randombytes[i]);
+            }
+
+            Console.WriteLine(Convert.ToBase64String(randombytes));
+            Console.Read();
         }
     }
 }
